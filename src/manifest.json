@@ -1,0 +1,16 @@
+{
+	"manifest_version": 1,
+	"id": "com.danielkossmann.pasteToLink",
+	"app_min_version": "3.7",
+	"version": "1.0.0",
+	"name": "Paste to Link",
+	"description": "Select text and paste a URL to turn the selection into a markdown link, like the WordPress block editor.",
+	"author": "Daniel Kossmann",
+	"homepage_url": "",
+	"repository_url": "",
+	"keywords": ["link", "paste", "markdown", "editor"],
+	"categories": ["editor"],
+	"screenshots": [],
+	"icons": {},
+	"promo_tile": {}
+}
