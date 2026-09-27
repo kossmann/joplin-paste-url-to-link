@@ -1,6 +1,16 @@
 {
-  "name": "joplin-plugin-paste-to-link",
+  "name": "joplin-plugin-paste-url-to-link",
   "version": "1.0.0",
+  "description": "Joplin plugin: select text and paste a URL to turn the selection into a Markdown link.",
+  "author": "Daniel Kossmann",
+  "homepage": "https://github.com/kossmann/joplin-paste-url-to-link#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kossmann/joplin-paste-url-to-link.git"
+  },
+  "bugs": {
+    "url": "https://github.com/kossmann/joplin-paste-url-to-link/issues"
+  },
   "scripts": {
     "dist": "webpack --env joplin-plugin-config=buildMain && webpack --env joplin-plugin-config=buildExtraScripts && webpack --env joplin-plugin-config=createArchive",
     "prepare": "npm run dist",
@@ -9,14 +19,16 @@
   },
   "license": "MIT",
   "keywords": [
-    "joplin-plugin"
+    "joplin-plugin",
+    "link",
+    "paste",
+    "markdown"
   ],
   "files": [
     "publish"
   ],
   "devDependencies": {
     "@codemirror/state": "^6.2.0",
-    "@codemirror/view": "^6.9.0",
     "@types/node": "^18.7.13",
     "chalk": "^4.1.0",
     "copy-webpack-plugin": "^11.0.0",
