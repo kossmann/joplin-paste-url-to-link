@@ -26,45 +26,20 @@ selection spanning several paragraphs) behaves as usual.
 In Joplin, open **Tools → Options → Plugins**, search for **Paste URL to Link**
 and click **Install**.
 
-To install a local build instead, click the gear icon → **Install from file**
-and select `publish/com.danielkossmann.pasteUrlToLink.jpl`.
-
-## How it works
-
-The plugin registers a CodeMirror 6 content script
-([`src/pasteUrlToLinkEditor.ts`](src/pasteUrlToLinkEditor.ts)) that adds a
-transaction filter. Joplin pastes through several paths (CodeMirror's DOM
-`paste` handling, Joplin's own Paste command and the editor context menu), but
-all of them dispatch a transaction tagged `input.paste`. When such a
-transaction replaces a single non-empty selection with a single URL (`http:`,
-`https:`, `ftp:`, or `mailto:`, no whitespace), the filter rewrites it into
-`[selected text](url)`. Any other paste (plain text, multiple words, no
-selection, etc.) is left untouched.
-
-## Build
-
-```bash
-npm install
-npm run dist
-```
-
-This produces `publish/com.danielkossmann.pasteUrlToLink.jpl`.
+To install it manually, download the `.jpl` file from the
+[plugin page](https://joplinapp.org/plugins/plugin/com.danielkossmann.pasteUrlToLink/),
+then in **Options → Plugins** click the gear icon → **Install from file** and
+select the downloaded file.
 
 ## Development
 
-For quicker iteration, open **Options → Plugins → Show Advanced Settings** and
-add the absolute path of this repository's `dist/` folder to **Development
-plugins**. After each `npm run dist`, restart Joplin to load the new build.
-
-## Publishing a release
-
-1. Bump the version with `npm run updateVersion` (keeps `package.json` and
-   `src/manifest.json` in sync).
-2. Run `npm publish`. The `prepare` script rebuilds `publish/` first.
-3. The [Joplin plugin repository](https://github.com/joplin/plugins) picks up
-   npm packages named `joplin-plugin-*` with the `joplin-plugin` keyword; the
-   new version appears in Joplin within about 30 minutes.
+See [DEVELOPMENT.md](https://github.com/kossmann/joplin-paste-url-to-link/blob/main/DEVELOPMENT.md) for how the plugin works, and how to
+build, test and publish it.
 
 ## License
 
 [MIT](LICENSE)
+
+---
+
+Made by [Daniel Kossmann](https://www.danielkossmann.com).
